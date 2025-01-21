@@ -123,8 +123,3 @@ public class Principal {
 
 5. Abre un **pull request**.
 
-## 📞 Contacto
-
-- **Correo electrónico**: juanse951@gmail.com
-- **LinkedIn**: [Tu LinkedIn](https://www.linkedin.com/in/juanse951/)
-
