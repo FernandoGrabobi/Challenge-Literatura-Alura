@@ -1,58 +1,130 @@
-# LiterAlura: Catálogo de Libros Interactivo
+# Literalura 📚
 
-## Descripción del Proyecto
+**Literalura** es una aplicación para gestionar libros y autores, ideal para bibliotecas, coleccionistas y amantes de la lectura. Permite realizar búsquedas de libros por título, gestionar estadísticas de descargas y consultar información detallada sobre autores.
 
-**LiterAlura** es una aplicación de consola en Java diseñada para gestionar un catálogo de libros. Este proyecto combina el consumo de una API, la manipulación de datos JSON, la persistencia en una base de datos y la interacción directa con los usuarios. Es una solución integral para explorar libros y autores de interés de manera estructurada y dinámica.
+Este proyecto está construido con Java, usando Spring y otras herramientas tecnológicas, y tiene como objetivo ofrecer una plataforma eficiente para almacenar, buscar y analizar libros y autores.
 
-## Objetivo
+---
 
-El objetivo principal de LiterAlura es proporcionar una herramienta interactiva que permita a los usuarios:
-- Buscar libros y autores en una API de libros.
-- Guardar los datos obtenidos en una base de datos.
-- Consultar y filtrar la información almacenada.
-- Visualizar los resultados directamente en la consola.
-- Realizar al menos cinco acciones diferentes relacionadas con los libros y autores.
+## 🚀 Funcionalidades
 
-## Uso
-1. Al iniciar, la aplicación mostrará un menú con las opciones disponibles.
-2. Elige una opción y sigue las instrucciones que aparecen en pantalla.
-3. Los resultados se mostrarán directamente en la consola.
+- **Búsqueda de libros por título**: Busca libros en una base de datos o mediante una API externa.
+- **Listado de libros**: Visualiza todos los libros registrados.
+- **Listado de autores**: Visualiza todos los autores registrados.
+- **Consulta de autores vivos**: Verifica qué autores están vivos en un año específico.
+- **Filtrado de libros por idioma**: Muestra libros disponibles en un idioma determinado.
+- **Estadísticas de libros por idioma**: Visualiza un resumen de los libros disponibles por cada idioma.
+- **Top 10 libros más descargados**: Muestra los 10 libros más descargados en la plataforma.
+- **Estadísticas de descargas por autor**: Proporciona análisis de las descargas totales, promedio, máximo y mínimo de los libros de cada autor.
 
-## Funcionalidades Principales
+---
 
-### 1. **Buscar Libro por Título:**
-   - Permite buscar libros en base a un título proporcionado por el usuario. Esta búsqueda consume la API [Gutenberg API](https://gutendex.com/), la cual devuelve un JSON con información de libros relacionados con el título ingresado. Los datos obtenidos de la API son serializados y almacenados en la base de datos para futuras consultas.
+## 📦 Requisitos
 
-### 2. **Buscar Libro Registrado por Nombre de Autor:**
-   - Permite buscar libros registrados en la base de datos utilizando el nombre de un autor.
+- **Java 17** o superior.
+- **Maven** para la gestión de dependencias.
+- **Base de datos**: MySQL o H2 (configurable).
+- **IDE recomendada**: IntelliJ IDEA, Eclipse, o Visual Studio Code.
 
-### 3. **Listar Libros Registrados:**
-   - Muestra todos los libros almacenados en la base de datos.
+---
 
-### 4. **Listar Autores Registrados:**
-   - Muestra todos los autores almacenados en la base de datos.
+## ⚙️ Instalación y Uso
 
-### 5. **Listar Autores Vivos en un Año Determinado:**
-   - Permite filtrar y mostrar los autores que estaban vivos en un año específico.
+### Clonar el repositorio
 
-### 6. **Listar Libros por Idioma:**
-   - Permite listar los libros registrados que estén disponibles en un idioma específico.
-   - 
-## Instalación
+Clona este repositorio para comenzar a trabajar en el proyecto:
 
-### Requisitos Previos
+```bash
+git clone https://github.com/tu_usuario/literalura.git 
+```
+# ⚙️ Configuración del entorno
 
-- Java 17 o superior.
-- Maven 3.8.1 o superior.
-- Base de datos PostgreSQL configurada.
-- Acceso a la API de libros (proporcionar URL y credenciales si aplica).
+## Requisitos previos
 
-### Pasos de Instalación
+Asegúrate de tener **Java 17** o superior instalado. Puedes verificar tu versión con el siguiente comando:
 
-1. Clona este repositorio:
-   ```bash
-   git clone https://github.com/tu-usuario/literalura.git
-   cd literalura
+```bash
+java -version
+```
 
-### Creditos
-Proyecto desarrollado como parte del desafío II de programación de Alura. ¡Gracias por esta oportunidad para aprender y crecer!
+Configura **Maven** para gestionar las dependencias. Si no tienes Maven instalado, puedes seguir las instrucciones en la [documentación oficial de Maven](https://maven.apache.org/install.html).
+
+Si estás usando una base de datos como **MySQL**, asegúrate de configurarla correctamente en el archivo `application.properties`. Aquí tienes un ejemplo de cómo configurarlo:
+
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/literalura
+spring.datasource.username=tu_usuario
+spring.datasource.password=tu_contraseña
+spring.jpa.hibernate.ddl-auto=update
+```
+
+---
+
+## ▶️ Ejecutar la aplicación
+
+1. **Navega a la carpeta del proyecto**:
+
+    ```bash
+    cd literalura
+    ```
+
+2. **Compila y ejecuta el proyecto con Maven**:
+
+    ```bash
+    mvn spring-boot:run
+    ```
+
+---
+
+## 📜 Ejemplo de código
+
+A continuación se muestra un ejemplo de código básico para inicializar la aplicación:
+
+```java
+public class Principal {
+
+    private static final String URL_BASE = "https://gutendex.com/books/";
+
+    public static void main(String[] args) {
+        System.out.println("Bienvenido a Literalura");
+        // Inicialización y ejecución del programa
+    }
+
+    public void muestraElMenu() {
+        // Lógica para mostrar el menú
+    }
+}
+```
+
+---
+
+## 🧑‍🤝‍🧑 Contribuir
+
+¡Contribuye al proyecto! Si encuentras errores o tienes ideas para nuevas funcionalidades, no dudes en abrir un *issue* o enviar un *pull request*.
+
+1. Haz un **fork** del repositorio.
+2. Crea una rama con tu cambio:
+
+    ```bash
+    git checkout -b nueva-funcionalidad
+    ```
+
+3. Realiza el cambio y haz **commit**:
+
+    ```bash
+    git commit -am 'Agrega nueva funcionalidad'
+    ```
+
+4. Empuja tu rama:
+
+    ```bash
+    git push origin nueva-funcionalidad
+    ```
+
+5. Abre un **pull request**.
+
+## 📞 Contacto
+
+- **Correo electrónico**: juanse951@gmail.com
+- **LinkedIn**: [Tu LinkedIn](https://www.linkedin.com/in/juanse951/)
+
