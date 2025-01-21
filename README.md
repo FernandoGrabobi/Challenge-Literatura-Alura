@@ -1,102 +1,58 @@
-# 🌟 **Readora** 🌟  
+# LiterAlura: Catálogo de Libros Interactivo
 
-Una aplicación web para explorar y gestionar libros digitales, utilizando la API de Gutendex. 
+## Descripción del Proyecto
 
----
+**LiterAlura** es una aplicación de consola en Java diseñada para gestionar un catálogo de libros. Este proyecto combina el consumo de una API, la manipulación de datos JSON, la persistencia en una base de datos y la interacción directa con los usuarios. Es una solución integral para explorar libros y autores de interés de manera estructurada y dinámica.
 
-## ☆ ───── **Características principales** ✨───── ☆
+## Objetivo
 
-### 📖 **Sección de Libros**  
-- **Búsqueda de libros**: Encuentra libros por título a través de la API de Gutendex.  
-- **Biblioteca Personal**: Almacenamiento automático de libros consultados.  
-- **Filtrado por Idiomas**: Filtra los libros almacenados en español, inglés, francés y chino.  
-- **Detalles Completos**: Visualización detallada de la información de cada libro.  
+El objetivo principal de LiterAlura es proporcionar una herramienta interactiva que permita a los usuarios:
+- Buscar libros y autores en una API de libros.
+- Guardar los datos obtenidos en una base de datos.
+- Consultar y filtrar la información almacenada.
+- Visualizar los resultados directamente en la consola.
+- Realizar al menos cinco acciones diferentes relacionadas con los libros y autores.
 
-### 📊 **Sección de Estadísticas**  
-- **Distribución de idiomas**: Visualiza la cantidad de libros disponibles por idioma.  
-- **Popularidad por descargas**: Estadísticas sobre descargas totales por idioma.  
+## Uso
+1. Al iniciar, la aplicación mostrará un menú con las opciones disponibles.
+2. Elige una opción y sigue las instrucciones que aparecen en pantalla.
+3. Los resultados se mostrarán directamente en la consola.
 
-### ✍️ **Sección de Autores**  
-- **Filtro por año**: Encuentra autores vivos en un año específico.  
-- **Catálogo de autores**: Lista detallada con información sobre los autores almacenados.  
-- **Relación libros-autores**: Detalles completos de cada autor junto con los libros que escribieron.  
+## Funcionalidades Principales
 
----
+### 1. **Buscar Libro por Título:**
+   - Permite buscar libros en base a un título proporcionado por el usuario. Esta búsqueda consume la API [Gutenberg API](https://gutendex.com/), la cual devuelve un JSON con información de libros relacionados con el título ingresado. Los datos obtenidos de la API son serializados y almacenados en la base de datos para futuras consultas.
 
-## ☆ ───── **Tecnologías utilizadas** 🛠️  ───── ☆
+### 2. **Buscar Libro Registrado por Nombre de Autor:**
+   - Permite buscar libros registrados en la base de datos utilizando el nombre de un autor.
 
-### **Backend**  
-| Herramienta       | Uso                            |  
-| ----------------- | ------------------------------ |  
-| **Java 17**       | Lenguaje principal.            |  
-| **PostgreSQL**    | Base de datos.                 |  
-| **Spring Boot**   | Framework de desarrollo.       |  
-| **JPA Hibernate** | Mapeo objeto-relacional.       |  
-| **Maven**         | Gestión de dependencias.       |  
-| **Jackson**       | Procesamiento de JSON.         |  
+### 3. **Listar Libros Registrados:**
+   - Muestra todos los libros almacenados en la base de datos.
 
-### **Frontend**  
-| Herramienta          | Uso                   |  
-| -------------------- | --------------------- |  
-| **React**            | Biblioteca principal. |  
-| **Axios**            | Cliente HTTP.         |  
-| **Tailwind CSS**     | Estilos y diseño.     |  
-| **React Router DOM** | Enrutamiento.         |  
+### 4. **Listar Autores Registrados:**
+   - Muestra todos los autores almacenados en la base de datos.
 
----
+### 5. **Listar Autores Vivos en un Año Determinado:**
+   - Permite filtrar y mostrar los autores que estaban vivos en un año específico.
 
-## ☆ ───── **Estructura del proyecto** 📂  ───── ☆
+### 6. **Listar Libros por Idioma:**
+   - Permite listar los libros registrados que estén disponibles en un idioma específico.
+   - 
+## Instalación
 
-```bash
-Readora/
-├── backend/
-│   ├── src/
-│   │   ├── main/
-│   │   │   ├── java/
-│   │   │   │   ├── com.readora.Readora
-│   │   │   │   │   ├── config/
-│   │   │   │   │   ├── controller/
-│   │   │   │   │   ├── dto/
-│   │   │   │   │   ├── model/
-│   │   │   │   │   ├── repository/
-│   │   │   │   │   └── service/
-│   │   │   │   └── ReadoraApplication.java
-│   │   │   └── resources/
-│   │   │       └── application.properties
-│   └── pom.xml
-└── frontend/
-    ├── src/
-    │   ├── assets/
-    │   ├── components/
-    │   ├── pages/
-    │   └── services/
-    ├── .env
-    ├── package.json
-    └── tailwind.config.js
-```
+### Requisitos Previos
 
----
-## ☆ ───── **Capturas de pantalla** ───── ☆
+- Java 17 o superior.
+- Maven 3.8.1 o superior.
+- Base de datos PostgreSQL configurada.
+- Acceso a la API de libros (proporcionar URL y credenciales si aplica).
 
-✨ **Interfaz del proyecto**  
+### Pasos de Instalación
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/6bdd6b82-03a5-446d-b445-a68f303a96f3" alt="LandingPage" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/80a24569-aa91-4a9e-8810-b1bce1a6c2f4" alt="BooksPage" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/58986034-921b-44a1-9a87-ffe879cd9f8c" alt="BooksSearch" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/24b6a7c6-e139-4120-b90f-0a6a16d34fcc" alt="BooksFilter" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/3e1c8eb6-b995-45ab-9fed-824f04006bc4" alt="BookDetail" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/08ac397f-3386-408d-bc04-f9ad5df4f7b1" alt="AuthorsPage" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/981b47ca-fb4a-4988-8f05-52c13aaec80c" alt="AuthorDetail" width="45%"/>
-  <img src="https://github.com/user-attachments/assets/8538d16f-22b5-48c4-a795-137ee62d8f8e" alt="Stats" width="45%"/>
-</p>
+1. Clona este repositorio:
+   ```bash
+   git clone https://github.com/tu-usuario/literalura.git
+   cd literalura
 
----
-
-## Funcionalidades Futuras
-
-- **Sistema de usuarios y autenticación**: Los usuarios podrán crear una cuenta, iniciar sesión y acceder a su perfil para gestionar sus libros.
-- **Permitir a los usuarios marcar libros como leídos, favoritos y agregar notas**
-- **Agregar un sistema de paginación**: Implementar un sistema de paginación para mejorar la experiencia al manejar listados largos de libros o autores.
-- **Filtrar por autor y temas**: Agregar filtros más avanzados para buscar libros por autor y tema.
-- **Desafíos de lectura**: Los usuarios podrán establecer metas de lectura y hacer un seguimiento de su progreso.
+### Creditos
+Proyecto desarrollado como parte del desafío II de programación de Alura. ¡Gracias por esta oportunidad para aprender y crecer!
